@@ -1,6 +1,6 @@
-let ltext = document.querySelector(".loading-text");
+let loadingtext = document.querySelector(".loading-text");
 let bg = document.querySelector(".bg");
-let aa = document.querySelector(".welcome-text");
+let welcome = document.querySelector(".welcome-text");
 
 const scale = (num, in_min, in_max, out_min, out_max) => {
   return ((num - in_min) * (out_max - out_min)) / (in_max - in_min) + out_min;
@@ -14,10 +14,10 @@ function blur() {
   load++;
   if (load > 99) {
     clearInterval(int);
-    ltext.style.display = "none";
-    aa.style.display = "block";
+    loadingtext.style.display = "none";
+    welcome.style.display = "block";
   }
-  ltext.innerText = `${load}%`;
-  ltext.style.opacity = scale(load, 0, 100, 20, 0);
+  loadingtext.innerText = `${load}%`;
+  loadingtext.style.opacity = scale(load, 0, 100, 20, 0);
   bg.style.filter = `blur(${scale(load, 0, 100, 20, 0)}px)`;
 }
