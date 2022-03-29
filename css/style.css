@@ -36,3 +36,9 @@ body {
   font-size: 65px;
   color: #fff;
 }
+
+@media (max-width: 600px) {
+  .welcome-text {
+    font-size: 30px;
+  }
+}
